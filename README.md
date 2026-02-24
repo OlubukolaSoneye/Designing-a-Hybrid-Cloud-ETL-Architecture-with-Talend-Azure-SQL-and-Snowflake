@@ -1,7 +1,7 @@
 ## ☁️ Hybrid Cloud ETL Pipeline (Talend + Azure SQL + Snowflake)
 
 ## 📊 The Business Problem
-Organisations running hybrid environments often face a critical gap — operational databases and analytical platforms don't talk to each other. The result is manual data transfers, siloed reporting, and delayed decision-making. This project addresses that directly by designing and implementing an automated ETL pipeline that moves structured data from flat files into both an operational layer (Azure SQL) and an analytical warehouse (Snowflake), with Talend Open Studio as the orchestration engine.
+The project's primary scope is the development and implementation of a highly specialized batch processing ETL pipeline tailored for a bank cryptocurrency portfolio. This encompasses the automation of data extraction from News API, meticulous cleaning, and transformation using SQL scripts to ensure data accuracy, and the subsequent loading of processed data into an AWS S3 bucket. The focus lies in streamlining and automating the end-to-end data management process, with special attention to scalability, periodic execution scheduling, and robust monitoring mechanisms. The overarching goal is to deliver a turnkey solution that significantly enhances the efficiency and accuracy of cryptocurrency asset data management within the broader context of Zap Bank's diversified asset portfolio.
 
 ## 📌 What I Built
 A modular, production-aligned ETL architecture that:
