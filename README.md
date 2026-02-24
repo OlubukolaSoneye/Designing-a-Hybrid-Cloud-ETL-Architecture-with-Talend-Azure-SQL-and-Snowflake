@@ -11,7 +11,7 @@ Load Data into Azure SQL Database and Snowflake: Establish the infrastructure an
 Streamline Data Export Process: Automate the data export process to enhance efficiency and reduce manual effort.
 
 <p align="center">
-  <img src="Screenshot 2026-02-24 at 13.42.20.png" width="550"/>
+  <img src="Screenshot 2026-02-24 at 13.42.20.png" width="650"/>
 </p>
 
 ## 🗄️ Data Design & Modelling
