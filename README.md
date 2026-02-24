@@ -1,22 +1,26 @@
-## ☁️ Hybrid Cloud ETL Pipeline (Talend + Azure SQL + Snowflake)
+## ☁️ Cloud-Based ETL Pipeline | Exporting Data for Financial Analysis (Talend + Azure SQL + Snowflake)
 
 ## 📊 The Business Problem
-The project's primary scope is the development and implementation of a highly specialized batch processing ETL pipeline tailored for a bank cryptocurrency portfolio. This encompasses the automation of data extraction from News API, meticulous cleaning, and transformation using SQL scripts to ensure data accuracy, and the subsequent loading of processed data into an AWS S3 bucket. The focus lies in streamlining and automating the end-to-end data management process, with special attention to scalability, periodic execution scheduling, and robust monitoring mechanisms. The overarching goal is to deliver a turnkey solution that significantly enhances the efficiency and accuracy of cryptocurrency asset data management within the broader context of Zap Bank's diversified asset portfolio.
+The Bank in this case study relied on fragmented data sources across cloud and on-premise systems, with manual extraction processes that were error-prone and non-scalable. Transactional data and customer records existed in separate environments, limiting the ability to perform unified financial analysis.
+
+The challenge was to design a scalable cloud-based ETL architecture that automates data ingestion, maintains relational integrity, and separates operational and analytical workloads without compromising performance.
 
 ## 📌 What I Built
-A modular, production-aligned ETL architecture that:
-Extracts data from structured flat files
-Transforms and standardises datasets to meet target schema requirements
-Loads cleaned data into Azure SQL Database for operational storage
-Pushes analytical-ready data into Snowflake for warehouse querying
-Uses context-driven configuration (tContextLoad) to separate dev and production environments — making the pipeline reusable and environment-agnostic
-
+Develop a Robust ETL Pipeline: Create a reliable and efficient ETL pipeline capable of extracting data from diverse cloud sources..
+Load Data into Azure SQL Database and Snowflake: Establish the infrastructure and procedures required to load transformed data into Azure SQL Database and Snowflake.
+Streamline Data Export Process: Automate the data export process to enhance efficiency and reduce manual effort.
 <img src="Screenshot 2026-02-24 at 13.42.20.png" width="500"/>
-
-Here's a tighter version:
 
 ## 🗄️ Data Design & Modelling
 Before building the pipeline, I designed a relational schema that enforces clean separation between operational and analytical workloads while maintaining referential integrity across both platforms.
+
+## 🔄 Data Transformation Strategy
+The transformation layer ensures data consistency across both cloud platforms before loading. This transformation step guarantees reliable integration between operational and analytical layers while maintaining referential integrity.
+1. Standardised column naming conventions across Snowflake and Azure SQL
+2. Enforced consistent data types between platforms to prevent schema drift
+3. Applied join logic to align customer and transaction datasets
+4. Validated schema structure before loading into cloud targets
+
 ## Snowflake — Financial_Transactions (Analytical Layer)
 Designed for high-volume analytical queries. Captures transaction metadata — amount, type, date, status, location, and currency — structured to align with Snowflake's columnar storage model.
 Primary Key: Transaction_ID
@@ -34,6 +38,7 @@ Splitting customer and transactional data across platforms was a deliberate arch
 ## 🔍 Architecture Decisions
 Why Azure SQL for operational, Snowflake for analytical?
 Azure SQL handles transactional, row-level queries efficiently, which is ideal for operational workloads. Snowflake's columnar storage and separation of compute and storage make it purpose-built for analytical queries at scale. Keeping the two layers separate avoids performance bottlenecks and mirrors real-world enterprise data architecture.
+
 Why context-driven configuration?
 Hardcoding credentials and environment settings into ETL jobs creates brittle pipelines. Using tContextLoad with external context files allows the same job to run across dev, staging, and production without modification — a pattern used in production data engineering teams.
 
@@ -49,5 +54,5 @@ SQL
 Microsoft Azure SQL Database (operational layer)
 Snowflake (analytical warehouse)
 Talend Open Studio (ETL orchestration)
-Context Variables & tContextLoad
+
 
