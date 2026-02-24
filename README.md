@@ -11,7 +11,7 @@ Load Data into Azure SQL Database and Snowflake: Establish the infrastructure an
 Streamline Data Export Process: Automate the data export process to enhance efficiency and reduce manual effort.
 
 <p align="center">
-  <img src="Screenshot 2026-02-24 at 13.42.20.png" width="450"/>
+  <img src="Screenshot 2026-02-24 at 13.42.20.png" width="550"/>
 </p>
 
 ## 🗄️ Data Design & Modelling
@@ -32,7 +32,7 @@ Primary Key: Transaction_ID
 Core customer reference data optimised for fast row-level reads. Kept in Azure SQL to support low-latency operational access rather than warehouse-scale compute.
 Primary Key: Customer_ID
 <p align="center">
-  <img src="Screenshot 2026-02-24 at 13.57.52.png" width="450"/>
+  <img src="Screenshot 2026-02-24 at 13.57.52.png" width="550"/>
 </p>
 
 ## Mapping Layer
