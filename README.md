@@ -9,7 +9,10 @@ The challenge was to design a scalable cloud-based ETL architecture that automat
 Develop a Robust ETL Pipeline: Create a reliable and efficient ETL pipeline capable of extracting data from diverse cloud sources..
 Load Data into Azure SQL Database and Snowflake: Establish the infrastructure and procedures required to load transformed data into Azure SQL Database and Snowflake.
 Streamline Data Export Process: Automate the data export process to enhance efficiency and reduce manual effort.
-<img src="Screenshot 2026-02-24 at 13.42.20.png" width="500"/>
+
+<p align="center">
+  <img src="Screenshot 2026-02-24 at 13.42.20.png" width="450"/>
+</p>
 
 ## 🗄️ Data Design & Modelling
 Before building the pipeline, I designed a relational schema that enforces clean separation between operational and analytical workloads while maintaining referential integrity across both platforms.
@@ -28,8 +31,9 @@ Primary Key: Transaction_ID
 ## Azure SQL — Customer_Details (Operational Layer)
 Core customer reference data optimised for fast row-level reads. Kept in Azure SQL to support low-latency operational access rather than warehouse-scale compute.
 Primary Key: Customer_ID
-
-<img src="Screenshot 2026-02-24 at 13.57.52.png" width="450"/>
+<p align="center">
+  <img src="Screenshot 2026-02-24 at 13.57.52.png" width="450"/>
+</p>
 
 ## Mapping Layer
 Connects Customer_ID and Account_Number across both platforms, maintaining referential integrity without tightly coupling the two systems.
